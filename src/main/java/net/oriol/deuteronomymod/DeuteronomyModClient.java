@@ -10,14 +10,13 @@ import net.minecraft.util.Hand;
 import org.lwjgl.glfw.GLFW;
 
 public class DeuteronomyModClient implements ClientModInitializer {
-    @Override
-    public void onInitializeClient() {
-        var keybind = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+    public static final KeyBinding keybind = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "deuteronomymod.keybinds.usepearl",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_Q,
                 "category.deuteronomymod"));
-
+    @Override
+    public void onInitializeClient() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (keybind.wasPressed()) {
                 var initialHotbar = MinecraftClient.getInstance().player.getInventory().selectedSlot;
