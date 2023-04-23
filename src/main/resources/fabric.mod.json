@@ -18,9 +18,6 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "net.oriol.deuteronomymod.DeuteronomyMod"
-    ],
     "client": [
       "net.oriol.deuteronomymod.DeuteronomyModClient"
     ]
@@ -33,7 +30,8 @@
     "fabricloader": ">=0.14.17",
     "fabric-api": "*",
     "minecraft": "~1.19.4",
-    "java": ">=17"
+    "java": ">=17",
+    "fabric-key-binding-api-v1": "*"
   },
   "suggests": {
     "another-mod": "*"
